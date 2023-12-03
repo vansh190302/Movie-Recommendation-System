@@ -46,7 +46,7 @@ def main():
     if flask.request.method == 'POST':
         m_name = " ".join(flask.request.form['movie_name'].title().split())
         if m_name not in all_titles:
-            return(flask.render_template('notFound.html',name=m_name))
+            return False
         else:
             result_final = get_recommendations(m_name)
             names = []
